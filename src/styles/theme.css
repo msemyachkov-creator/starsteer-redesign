@@ -1,0 +1,225 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-display: 'Inter Display', sans-serif;
+  --font-family-graph: 'Barlow Semi Condensed', sans-serif;
+  --font-size: 16px;
+
+  /* Typography sizes */
+  --text-body: 14px;
+  --text-general: 12px;
+  --text-caption: 10px;
+  --text-graph: 12px;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+
+  /* ── Surfaces ── */
+  --background: #ffffff;
+  --foreground: #070a0d;
+  --surface-dim-1: #ffffff;
+  --surface-2: #e3ebf3;
+  --surface-tertiary: #f4f8fd;
+  --surface-solid-base: #ffffff;
+
+  /* ── Text ── */
+  --text-primary: #070a0d;
+  --text-secondary: rgba(34, 59, 78, 0.8);
+  --text-tertiary: rgba(34, 59, 78, 0.6);
+  --text-disabled: rgba(34, 59, 78, 0.4);
+  --text-on-accent: #f8fafc;
+  --text-accent: #0849a5;
+
+  /* ── Controls ── */
+  --control-main-default: rgba(255, 255, 255, 0.8);
+  --control-main-active: #ffffff;
+  --control-main-tertiary: rgba(227, 235, 243, 0.6);
+  --control-accent-default: #0849a5;
+  --control-strong-accent: #ffffff;
+  --control-alt-primary: rgba(177, 201, 221, 0.05);
+  --control-alt-secondary: rgba(127, 166, 199, 0.05);
+
+  /* ── Strokes / Borders ── */
+  --stroke-control-default: rgba(34, 59, 78, 0.1);
+  --stroke-control-secondary: rgba(34, 59, 78, 0.2);
+  --stroke-control-solid: rgba(24, 41, 57, 0.6);
+  --stroke-divider: rgba(34, 59, 78, 0.1);
+  --stroke-surface-default: rgba(3, 5, 7, 0.1);
+  --stroke-surface-secondary: rgba(90, 138, 185, 0.1);
+  --stroke-color-palette: rgba(0, 0, 0, 0.1);
+
+  /* ── Brand / ROGII ── */
+  --rogii-orange: #ff671d;
+  --rogii-azure: #197bee;
+  --rogii-picton-blue: #38e2ed;
+  --rogii-candlelight: #ffdb1d;
+  --rogii-heliotrope: #8f75ff;
+  --rogii-royal-blue: #6e3ce6;
+  --rogii-supernova: #ffc700;
+  --rogii-jungle-green: #25bd59;
+
+  /* ── Status colors ── */
+  --color-success: #299947;
+  --color-red: #d33939;
+  --color-yellow: #fdd136;
+  --color-grass: #95cd4e;
+  --color-blue-100: #4aa0f3;
+  --color-blue-200: #197bee;
+
+  /* ── Graph cloud ── */
+  --graph-cloud-neutral: rgba(255, 255, 255, 0.8);
+
+  /* ── Shadows ── */
+  --shadow-card-hover: 0px 2px 4px 0px rgba(3, 5, 7, 0.1);
+  --shadow-flyout: 0px 8px 16px 0px rgba(3, 5, 7, 0.15);
+
+  /* ── Spacing ── */
+  --spacing-none: 0px;
+  --spacing-1: 1px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+
+  /* ── Radius ── */
+  --radius: 4px;
+  --radius-none: 0px;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-card: 6px;
+  --radius-round: 8px;
+
+  /* ── Sidebar ── */
+  --sidebar-width: 160px;
+  --right-panel-width: 220px;
+
+  /* ── Border defaults ── */
+  --border: var(--stroke-divider);
+  --input: transparent;
+  --input-background: var(--control-main-tertiary);
+  --ring: var(--control-accent-default);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-dim: var(--surface-dim-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-tertiary: var(--surface-tertiary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-accent: var(--text-accent);
+  --color-accent: var(--control-accent-default);
+  --color-accent-foreground: var(--text-on-accent);
+  --color-control-tertiary: var(--control-main-tertiary);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-success: var(--color-success);
+  --color-destructive: var(--color-red);
+  --radius-sm: var(--radius-2);
+  --radius-md: var(--radius-4);
+  --radius-lg: var(--radius-6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family-base);
+    font-size: var(--text-general);
+    line-height: 1.333;
+  }
+}
+
+/* ── Typography utility classes ── */
+
+/* General: Inter Display 12/16 Regular */
+.ss-general {
+  font-family: var(--font-family-display);
+  font-size: var(--text-general);
+  font-weight: var(--font-weight-normal);
+  line-height: 16px;
+}
+
+/* General Strong: Inter Display 12/16 SemiBold */
+.ss-general-strong {
+  font-family: var(--font-family-display);
+  font-size: var(--text-general);
+  font-weight: var(--font-weight-medium);
+  line-height: 16px;
+}
+
+/* Body: Inter Display 14/20 Regular */
+.ss-body {
+  font-family: var(--font-family-display);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-normal);
+  line-height: 20px;
+}
+
+/* Caption: Inter Display 10/12 Regular */
+.ss-caption {
+  font-family: var(--font-family-display);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-normal);
+  line-height: 12px;
+}
+
+/* Caption Strong: Inter 10/12 SemiBold */
+.ss-caption-strong {
+  font-family: var(--font-family-base);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: 12px;
+}
+
+/* Graph Digits: Barlow Semi Condensed 12/16 Regular */
+.ss-graph {
+  font-family: var(--font-family-graph);
+  font-size: var(--text-graph);
+  font-weight: var(--font-weight-normal);
+  line-height: 16px;
+}
+
+/* Caption Digits: Inter Display 10/12 Regular with numeric features */
+.ss-caption-digits {
+  font-family: var(--font-family-display);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-normal);
+  line-height: 12px;
+  font-feature-settings: 'salt' 1, 'lnum' 1, 'tnum' 1;
+}
+
+/* ── Scrollbar styling ── */
+.ss-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ss-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ss-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--stroke-control-secondary);
+  border-radius: 3px;
+}
+
+.ss-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+.ss-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--stroke-control-secondary) transparent;
+}
