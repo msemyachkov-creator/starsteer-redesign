@@ -5,11 +5,12 @@ interface IconButtonProps {
   icon: LucideIcon
   size?: 12 | 16 | 20
   className?: string
+  iconClassName?: string
   onClick?: () => void
   title?: string
 }
 
-export function IconButton({ icon: Icon, size = 16, className, onClick, title }: IconButtonProps) {
+export function IconButton({ icon: Icon, size = 16, className, iconClassName, onClick, title }: IconButtonProps) {
   const padding = size <= 12 ? "p-[2px]" : "p-[2px]"
   const iconSize = size <= 12 ? 12 : 16
 
@@ -25,7 +26,7 @@ export function IconButton({ icon: Icon, size = 16, className, onClick, title }:
     >
       <Icon
         size={iconSize}
-        className="text-[var(--text-secondary)]"
+        className={cn("text-[var(--text-secondary)]", iconClassName)}
         strokeWidth={1.5}
       />
     </button>

@@ -4,10 +4,7 @@ import {
   Undo2,
   Redo2,
   Calculator,
-  Bell,
-  RefreshCw,
-  CloudSun,
-  Share2,
+
   Minus,
   Square,
   X,
@@ -16,6 +13,9 @@ import { IconButton } from "@/components/ui/icon-button"
 import { HeaderButton } from "@/components/ui/header-button"
 import { Divider } from "@/components/ui/divider"
 import { StarSteerLogo } from "./starsteer-logo"
+import { WellPathIcon } from "@/components/icons/well-path-icon"
+import { StarRatingIcon } from "@/components/icons/star-rating-icon"
+import { ThemeToggleIcon } from "@/components/icons/theme-toggle-icon"
 
 export function Header() {
   return (
@@ -50,8 +50,8 @@ export function Header() {
         <div className="flex items-center gap-[6px] shrink-0">
           {/* Undo / Redo */}
           <div className="flex items-center gap-[2px]">
-            <IconButton icon={Undo2} size={12} title="Undo" />
-            <IconButton icon={Redo2} size={12} title="Redo" />
+            <IconButton icon={Undo2} size={12} title="Undo" iconClassName="-rotate-45" />
+            <IconButton icon={Redo2} size={12} title="Redo" iconClassName="rotate-45" />
           </div>
 
           <Divider />
@@ -59,24 +59,28 @@ export function Header() {
           {/* Tools */}
           <div className="flex items-center gap-[8px]">
             <IconButton icon={Calculator} size={12} title="Calculator" />
-            <div className="relative">
-              <IconButton icon={Bell} size={12} title="Notifications" />
+            <div className="relative flex items-center justify-center p-[2px]">
+              <WellPathIcon size={12} />
               {/* Red dot indicator */}
               <div className="absolute top-[1px] right-[1px] w-[5px] h-[5px] rounded-full bg-[var(--color-red)]" />
             </div>
-            <IconButton icon={RefreshCw} size={12} title="Sync" />
+            <div className="flex items-center justify-center p-[2px]">
+              <StarRatingIcon size={12} />
+            </div>
           </div>
 
           <Divider />
 
-          {/* Weather */}
-          <IconButton icon={CloudSun} size={12} title="Weather" />
+          {/* Theme toggle */}
+          <div className="flex items-center justify-center p-[2px]">
+            <ThemeToggleIcon size={12} />
+          </div>
 
           <Divider />
 
           {/* Actions */}
           <div className="flex items-center gap-[4px]">
-            <HeaderButton icon={Share2} label="Share" />
+            <HeaderButton label="Share" />
             <HeaderButton label="Solo Apps" hasDropdown />
             <HeaderButton label="About" />
           </div>
