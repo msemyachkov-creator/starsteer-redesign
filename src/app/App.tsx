@@ -1,20 +1,14 @@
+import { Header } from "@/components/header/header"
+
 export default function App() {
   return (
-    <div className="h-screen w-screen overflow-hidden bg-background text-foreground flex items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="ss-general-strong text-text-primary text-[20px]">
-          StarSteer Redesign Concept
-        </h1>
-        <p className="ss-general text-text-secondary">
-          GridInCP+ — Concept 26.3
+    <div className="h-screen w-screen overflow-hidden bg-background text-foreground flex flex-col">
+      <Header />
+      {/* Main content area placeholder */}
+      <div className="flex-1 flex items-center justify-center bg-[var(--surface-2)]">
+        <p className="ss-general text-[var(--text-tertiary)]">
+          Content area
         </p>
-        <div className="flex gap-3 justify-center mt-6">
-          <div className="w-3 h-3 rounded-full" style={{ background: 'var(--rogii-azure)' }} />
-          <div className="w-3 h-3 rounded-full" style={{ background: 'var(--rogii-orange)' }} />
-          <div className="w-3 h-3 rounded-full" style={{ background: 'var(--rogii-candlelight)' }} />
-          <div className="w-3 h-3 rounded-full" style={{ background: 'var(--rogii-jungle-green)' }} />
-          <div className="w-3 h-3 rounded-full" style={{ background: 'var(--rogii-heliotrope)' }} />
-        </div>
       </div>
     </div>
   )
