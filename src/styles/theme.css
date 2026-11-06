@@ -92,6 +92,19 @@
   --radius-card: 6px;
   --radius-round: 8px;
 
+  /* ── Legacy ribbon (STARSTEER-32971) ──
+     Raw values on purpose: these are the colours of the shipping ribbon and of
+     the Figma frames the Min/Max row is checked against, so the row can be
+     compared with a screenshot of the product pixel for pixel. Replacing them
+     with the redesign tokens would make that comparison meaningless. */
+  --ribbon-label: #333333;
+  --ribbon-value: #333333;
+  --ribbon-unit: #8c8c8c;
+  --ribbon-disabled: #999999;
+  --ribbon-disabled-bg: #e6e6e6;
+  --ribbon-field-border: #b3b3b3;
+  --ribbon-field-bg: #ffffff;
+
   /* ── Sidebar ── */
   --sidebar-width: 160px;
   --right-panel-width: 220px;
