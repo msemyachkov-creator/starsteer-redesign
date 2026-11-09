@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 import { RibbonField } from "./ribbon-field"
 import {
   CONTROL_HEIGHT,
-  FIT_BUTTON_SIZE,
+  FIT_BUTTON_WIDTH,
   RANGE_ROW_GAP,
   RANGE_ROW_WIDTH,
 } from "./geometry"
@@ -68,7 +68,7 @@ export function RangeRow({
         type="button"
         onClick={onFit}
         title="Reset scale to the log range"
-        style={{ width: FIT_BUTTON_SIZE, height: FIT_BUTTON_SIZE }}
+        style={{ width: FIT_BUTTON_WIDTH, height: CONTROL_HEIGHT }}
         className={cn(
           "flex shrink-0 items-center justify-center rounded-[var(--radius-4)]",
           "bg-[var(--control-main-tertiary)] hover:bg-[var(--control-alt-secondary)] transition-colors"

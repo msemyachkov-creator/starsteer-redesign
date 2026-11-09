@@ -20,8 +20,14 @@ export const RANGE_ROW_WIDTH = 179
 /** Gap between every pair of controls inside the row. */
 export const RANGE_ROW_GAP = 4
 
-/** Fit-to-range button, square. */
-export const FIT_BUTTON_SIZE = 20
+/**
+ * Fit-to-range button: 20 px wide, as high as the controls beside it.
+ *
+ * The mockup's `ribbon / command` is 20 x 21 — the width is its own, the height
+ * is the row's, so the button lines up with the top and bottom of the fields.
+ * It is not a square: a 20 x 20 button sits 1 px short of the field frame.
+ */
+export const FIT_BUTTON_WIDTH = 20
 
 /** Control height of the legacy ribbon: 19 px of content plus two 1 px borders. */
 export const CONTROL_HEIGHT = 21
